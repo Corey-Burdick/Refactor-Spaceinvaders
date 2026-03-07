@@ -1,6 +1,17 @@
 #include <raylib.h>
-#include <stdio.h>
+#include <constants.h>
 
 int main() {
-  printf("Hello World!\n");
+  
+  InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Space Invaders");
+  SetTargetFPS(TARGET_FPS);
+  
+  while (!WindowShouldClose()) {
+    BeginDrawing();
+
+    ClearBackground(COLOR_BACKGROUND_GREY);
+
+    EndDrawing();
+  }
+
 }
