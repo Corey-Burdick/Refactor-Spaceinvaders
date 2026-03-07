@@ -13,6 +13,7 @@ FetchContent_MakeAvailable(raylib)
 
 set(MY_SOURCES
     src/main.cpp
+    src/game.cpp
 )
 
 add_executable(${CMAKE_PROJECT_NAME} ${MY_SOURCES})

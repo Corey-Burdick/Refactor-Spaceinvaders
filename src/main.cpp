@@ -1,5 +1,6 @@
 #include <raylib.h>
 #include <constants.h>
+#include <game.h>
 
 int main() {
   
