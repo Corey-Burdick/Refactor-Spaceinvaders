@@ -6,6 +6,8 @@ int main() {
   
   InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Space Invaders");
   SetTargetFPS(TARGET_FPS);
+  SetWindowSize(GetMonitorWidth(0), GetMonitorHeight(0));
+  ToggleFullscreen();
 
   Game game;
   
