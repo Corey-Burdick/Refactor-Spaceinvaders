@@ -21,3 +21,7 @@ void AudioHandler::update() {
     }
   }
 }
+
+void AudioHandler::addMusic(const char* filename) {
+  _activeMusic.push_back(LoadMusicStream(filename));
+}

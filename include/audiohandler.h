@@ -12,5 +12,6 @@ public:
   AudioHandler();
   ~AudioHandler();
   void update();
+  void addMusic(const char* filename);
 
 };
