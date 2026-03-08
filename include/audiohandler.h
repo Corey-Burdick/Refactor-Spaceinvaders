@@ -1,15 +1,16 @@
 #pragma once
 
 #include <vector>
+#include <raylib.h>
 
-class AudioHandler{
+class AudioHandler {
 private:
   std::vector<Music> _activeMusic;
 
 public:
 
   AudioHandler();
-  ~AudioHandler():
+  ~AudioHandler();
   void update();
 
 };
