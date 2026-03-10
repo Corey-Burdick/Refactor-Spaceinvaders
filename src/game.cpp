@@ -28,3 +28,8 @@ void Game::_drawGameWindow() {
 void Game::_updateGameWindow() {
   _gameWindow = {GetScreenWidth() / 2 - WINDOW_WIDTH / 2, GetScreenHeight() / 2 - WINDOW_HEIGHT / 2, WINDOW_WIDTH, WINDOW_HEIGHT}; 
 }
+
+Vector2 Game::getGameWindowOrigin() {
+  Vector2 outputVector = Vector2{_gameWindow.x, _gameWindow.y};
+  return outputVector;
+}
