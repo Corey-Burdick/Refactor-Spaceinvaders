@@ -17,5 +17,4 @@ public:
   ~Game();
   void update();
   void draw();
-  Vector2 getGameWindowOrigin();
 };
