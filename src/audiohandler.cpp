@@ -20,7 +20,7 @@ void AudioHandler::update() {
 
   // Loops through all active music and updates the audio stream.
 
-  for (auto m : _activeMusic) {
+  for (auto& m : _activeMusic) {
     if (!IsMusicStreamPlaying(m.second)) {
       PlayMusicStream(m.second); 
     } else {
@@ -38,5 +38,9 @@ void AudioHandler::removeMusic(std::string musicID) {
   _activeMusic.erase(musicID);
 }
 
-
-
+void AudioHandler::clearMusic() {
+  for (auto& m : _activeMusic) {
+    UnloadMusicStream(m.second);
+  }
+  _activeMusic.clear();
+}

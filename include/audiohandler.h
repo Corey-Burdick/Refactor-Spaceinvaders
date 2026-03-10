@@ -7,6 +7,7 @@
 class AudioHandler {
 private:
   std::map<std::string, Music> _activeMusic;
+  std::map<std::string, Sound> _activeSounds;
 
 public:
 
@@ -15,5 +16,5 @@ public:
   void update();
   void addMusic(const char* filename, std::string musicID);
   void removeMusic(std::string musicID);
-
+  void clearMusic();
 };
