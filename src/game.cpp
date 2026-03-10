@@ -1,8 +1,7 @@
 #include <game.h>
 
 Game::Game() {
-  _audio.addMusic("Audio/Music/PlaceholderTrack1.ogg");
-  
+  _audio.addMusic("Audio/Music/PlaceholderTrack1.ogg", "mainTheme");
 
 }
 
