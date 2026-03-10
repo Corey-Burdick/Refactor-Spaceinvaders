@@ -26,7 +26,7 @@ void Game::_drawGameWindow() {
 }
 
 void Game::_updateGameWindow() {
-  _gameWindow = {GetScreenWidth() / 2 - WINDOW_WIDTH / 2, GetScreenHeight() / 2 - WINDOW_HEIGHT / 2, WINDOW_WIDTH, WINDOW_HEIGHT}; 
+  _gameWindow = {float(GetScreenWidth() / 2 - WINDOW_WIDTH / 2), float(GetScreenHeight() / 2 - WINDOW_HEIGHT / 2), WINDOW_WIDTH, WINDOW_HEIGHT}; 
 }
 
 Vector2 Game::getGameWindowOrigin() {
