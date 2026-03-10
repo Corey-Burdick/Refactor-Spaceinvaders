@@ -1,8 +1,8 @@
 #include <game.h>
 
 Game::Game() {
-  _updateGameWindow();
   _audio.addMusic("Audio/Music/PlaceholderTrack1.ogg");
+  
 
 }
 
@@ -11,21 +11,14 @@ Game::~Game() {
 }
 
 void Game::update() {
-  _updateGameWindow();
   _audio.update();
+  _gameFrame.update();
 
 }
 
 void Game::draw() {
-  _drawGameWindow();
+  _gameFrame.draw();
 }
 
-void Game::_drawGameWindow() {
   
-  DrawRectangleRoundedLinesEx(_gameWindow, 0.2f, 2, 5, WHITE);
-}
-
-void Game::_updateGameWindow() {
-  _gameWindow = {float(GetScreenWidth() / 2 - WINDOW_WIDTH / 2), float(GetScreenHeight() / 2 - WINDOW_HEIGHT / 2), WINDOW_WIDTH, WINDOW_HEIGHT}; 
-}
 

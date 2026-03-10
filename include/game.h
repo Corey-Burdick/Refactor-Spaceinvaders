@@ -3,14 +3,13 @@
 #include <raylib.h>
 #include <constants.h>
 #include <audiohandler.h>
+#include <gamewindow.h>
 
 class Game {
 private:
   AudioHandler _audio;
-  Rectangle _gameWindow;
+  GameWindow _gameFrame;
 
-  void _drawGameWindow();
-  void _updateGameWindow();
 public:
 
   Game();
