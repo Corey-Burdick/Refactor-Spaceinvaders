@@ -11,7 +11,6 @@ private:
   GameWindow _gameFrame;
 
 public:
-  int mit;
 
   Game();
   ~Game();
