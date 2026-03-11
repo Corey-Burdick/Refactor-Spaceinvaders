@@ -10,6 +10,7 @@ int main() {
   
   SetTargetFPS(TARGET_FPS);
   SetWindowSize(GetMonitorWidth(0), GetMonitorHeight(0));
+  ToggleFullScreen();
 
   Game game;
   
