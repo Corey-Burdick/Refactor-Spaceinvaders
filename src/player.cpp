@@ -16,8 +16,6 @@ Player::~Player() {
 }
 
 void Player::update() {
-  worldPosition.x = position.x + offset.x;
-  worldPosition.y = position.y + offset.y;
 }
 
 void Player::draw() {

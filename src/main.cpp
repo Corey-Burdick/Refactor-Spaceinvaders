@@ -4,7 +4,7 @@
 
 int main() {
   
-  SetConfigFlags(FLAG_WINDOW_RESIZABLE);
+  //SetConfigFlags(FLAG_WINDOW_RESIZABLE);
   SetConfigFlags(FLAG_MSAA_4X_HINT);
 
   InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Space Invaders");
