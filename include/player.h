@@ -3,6 +3,7 @@
 #include <raylib.h>
 #include <constants.h>
 #include <vector>
+#include <iostream>
 
 class Player {
 private:

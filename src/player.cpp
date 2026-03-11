@@ -1,10 +1,10 @@
 #include <player.h>
 
 Player::Player(Vector2 frame) {
+  _offset = frame; 
   _image = LoadTexture("Graphics/spaceship.png");
-  _worldPosition.x = (WINDOW_WIDTH / 2) - (_image.width / 2) + _offset.x;
-  _worldPosition.y = WINDOW_HEIGHT + _offset.y - _image.height;
-  _offset = frame;
+  _worldPosition.x = (WINDOW_WIDTH - _image.width) / 2;
+  _worldPosition.y = WINDOW_HEIGHT - _image.height;
 }
 
 Player::~Player() {
