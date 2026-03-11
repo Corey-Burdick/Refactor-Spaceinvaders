@@ -3,7 +3,8 @@
 Player::Player(Vector2 frame) {
 
   image = LoadTexture("Graphics/spaceship.png");
-  position = {250, 250};
+  position.x = (WINDOW_WIDTH / 2) - (image.width / 2) + offset.x;
+  position.y = WINDOW_HEIGHT + offset.y - image.height;
   offset = frame;
   worldPosition.x = position.x + offset.x;
   worldPosition.y = position.y + offset.y;

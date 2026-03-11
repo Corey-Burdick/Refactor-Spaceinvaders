@@ -1,6 +1,7 @@
 #pragma once
 
 #include <raylib.h>
+#include <constants.h>
 #include <vector>
 
 class Player {
