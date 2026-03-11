@@ -6,11 +6,11 @@
 
 class Player {
 private:
-  Texture2D image;
-  Vector2 position;
-  Vector2 offset;
-  Vector2 worldPosition;
+  Texture2D _image;
+  Vector2 _offset;
+  Vector2 _worldPosition;
 
+  Vector2 _getScreenPosition();
 public:
   Player(Vector2 frame);
   ~Player();

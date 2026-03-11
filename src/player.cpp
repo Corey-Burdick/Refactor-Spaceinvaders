@@ -2,22 +2,27 @@
 
 Player::Player(Vector2 frame) {
 
-  image = LoadTexture("Graphics/spaceship.png");
-  position.x = (WINDOW_WIDTH / 2) - (image.width / 2) + offset.x;
-  position.y = WINDOW_HEIGHT + offset.y - image.height;
-  offset = frame;
-  worldPosition.x = position.x + offset.x;
-  worldPosition.y = position.y + offset.y;
+  _image = LoadTexture("Graphics/spaceship.png");
+  _worldPosition.x = (WINDOW_WIDTH / 2) - (_image.width / 2) + _offset.x;
+  _worldPosition.y = WINDOW_HEIGHT + _offset.y - _image.height;
+  _offset = frame;
 
 }
 
 Player::~Player() {
-  UnloadTexture(image);
+  UnloadTexture(_image);
 }
 
 void Player::update() {
 }
 
 void Player::draw() {
-  DrawTextureV(image, worldPosition, WHITE);
+  DrawTextureV(_image, _getScreenPosition(), WHITE);
+}
+
+Vector2 Player::_getScreenPosition() {
+  Vector2 ScreenPosition;
+  ScreenPosition.x = _worldPosition.x + _offset.x;
+  ScreenPosition.y = _worldPosition.y + _offset.y;
+  return ScreenPosition;
 }
