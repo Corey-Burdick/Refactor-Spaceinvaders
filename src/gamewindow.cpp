@@ -19,7 +19,7 @@ void GameWindow::draw() {
 }
 
 void GameWindow::_drawWindowFrame() {
-  DrawRectangleRoundedLinesEx(_gameWindowFrame, 0.2f, 2, 5, WHITE);
+  DrawRectangleLinesEx(_gameWindowFrame, 3, WHITE);
 
 }
 

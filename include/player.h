@@ -12,6 +12,7 @@ private:
 
   Vector2 _getScreenPosition();
   void _handlePlayerMovement();
+  void _handleMovementConstraints();
 
 public:
   Player(Vector2 frame);

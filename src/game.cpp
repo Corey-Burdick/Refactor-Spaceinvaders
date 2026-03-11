@@ -16,8 +16,8 @@ void Game::update() {
 }
 
 void Game::draw() {
-  _gameFrame.draw();
   _player.draw();
+  _gameFrame.draw();
 }
 
   

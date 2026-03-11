@@ -1,12 +1,10 @@
 #include <player.h>
 
 Player::Player(Vector2 frame) {
-
   _image = LoadTexture("Graphics/spaceship.png");
   _worldPosition.x = (WINDOW_WIDTH / 2) - (_image.width / 2) + _offset.x;
   _worldPosition.y = WINDOW_HEIGHT + _offset.y - _image.height;
   _offset = frame;
-
 }
 
 Player::~Player() {
@@ -15,6 +13,7 @@ Player::~Player() {
 
 void Player::update() {
   _handlePlayerMovement();
+  _handleMovementConstraints();
 }
 
 void Player::draw() {
@@ -30,15 +29,21 @@ Vector2 Player::_getScreenPosition() {
 
 void Player::_handlePlayerMovement() {
   if (IsKeyDown(KEY_A)) {
-    _worldPosition.x -= 1;
+    _worldPosition.x -= 7;
   }
   if (IsKeyDown(KEY_D)) {
-    _worldPosition.x += 1;
+    _worldPosition.x += 7;
   }
-
 }
 
-
+void Player::_handleMovementConstraints() {
+  if (_worldPosition.x <= 0) {
+    _worldPosition.x = 0;
+  }
+  if (_worldPosition.x >= WINDOW_WIDTH - _image.width) {
+    _worldPosition.x = WINDOW_WIDTH - _image.width;
+  }
+}
 
 
 
