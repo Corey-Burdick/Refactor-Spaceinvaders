@@ -17,4 +17,5 @@ public:
   ~GameWindow();
   void update();
   void draw();
+  Vector2 getFrameOffset();
 };

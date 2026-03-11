@@ -12,11 +12,11 @@ Game::~Game() {
 void Game::update() {
   _audio.update();
   _gameFrame.update();
-
 }
 
 void Game::draw() {
   _gameFrame.draw();
+  _player.draw();
 }
 
   

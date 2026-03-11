@@ -4,11 +4,13 @@
 #include <constants.h>
 #include <audiohandler.h>
 #include <gamewindow.h>
+#include <player.h>
 
 class Game {
 private:
   AudioHandler _audio;
   GameWindow _gameFrame;
+  Player _player{_gameFrame.getFrameOffset()};
 
 public:
 

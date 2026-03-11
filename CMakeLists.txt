@@ -16,6 +16,7 @@ set(MY_SOURCES
     src/game.cpp
     src/audiohandler.cpp
     src/gamewindow.cpp
+    src/player.cpp
 )
 
 add_executable(${CMAKE_PROJECT_NAME} ${MY_SOURCES})
