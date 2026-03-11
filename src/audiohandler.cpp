@@ -7,12 +7,7 @@ AudioHandler::AudioHandler() {
 
 AudioHandler::~AudioHandler() {
  
-  // Loops through all Music stream in the active music vector, and frees them from memory.
-  
-  for (auto& m : _activeMusic) {
-    UnloadMusicStream(m.second);
-  } 
-
+  clearMusic();
   CloseAudioDevice();
 }
 
