@@ -11,6 +11,8 @@ private:
   Vector2 _worldPosition;
 
   Vector2 _getScreenPosition();
+  void _handlePlayerMovement();
+
 public:
   Player(Vector2 frame);
   ~Player();

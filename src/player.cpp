@@ -14,6 +14,7 @@ Player::~Player() {
 }
 
 void Player::update() {
+  _handlePlayerMovement();
 }
 
 void Player::draw() {
@@ -26,3 +27,18 @@ Vector2 Player::_getScreenPosition() {
   ScreenPosition.y = _worldPosition.y + _offset.y;
   return ScreenPosition;
 }
+
+void Player::_handlePlayerMovement() {
+  if (IsKeyDown(KEY_A)) {
+    _worldPosition.x -= 1;
+  }
+  if (IsKeyDown(KEY_D)) {
+    _worldPosition.x += 1;
+  }
+
+}
+
+
+
+
+
