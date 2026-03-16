@@ -5,6 +5,7 @@ Player::Player(Vector2 frame) {
   _image = LoadTexture("Graphics/spaceship.png");
   _worldPosition.x = (WINDOW_WIDTH - _image.width) / 2;
   _worldPosition.y = WINDOW_HEIGHT - _image.height;
+  _resetTimeSinceLastFire();
 }
 
 Player::~Player() {
@@ -12,6 +13,7 @@ Player::~Player() {
 }
 
 void Player::update() {
+  _updateTimeSinceLastFire();
   _handlePlayerMovement();
   _handleMovementConstraints();
 }
@@ -45,5 +47,11 @@ void Player::_handleMovementConstraints() {
   }
 }
 
+void Player::_updateTimeSinceLastFire() {
+  _lastPlayerInput += GetFrameTime();
+}
 
+void Player::_resetTimeSinceLastFire() {
+  _lastPlayerInput = 0.0f;
+}
 
