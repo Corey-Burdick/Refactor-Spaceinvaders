@@ -1,6 +1,7 @@
 #pragma once
 
 #define COLOR_BACKGROUND_GREY Color{29, 29, 27, 255}
+#define COLOR_FOREGROUND_YELLOW Color{243, 216, 63, 255}
 #define WINDOW_WIDTH 750
 #define WINDOW_HEIGHT 700
 #define TARGET_FPS 60
