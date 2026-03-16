@@ -5,12 +5,16 @@
 #include <audiohandler.h>
 #include <gamewindow.h>
 #include <player.h>
+#include <laser.h>
 
 class Game {
 private:
   AudioHandler _audio;
   GameWindow _gameFrame;
   Player _player{_gameFrame.getFrameOffset()};
+  std::vector<Laser> _activelasers;
+
+  void _updateLasers();
 
 public:
 
