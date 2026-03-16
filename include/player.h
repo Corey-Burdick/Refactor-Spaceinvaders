@@ -24,5 +24,6 @@ public:
   ~Player();
   void update();
   void draw();
+  Vector2 getPlayerPosition();
   
 };

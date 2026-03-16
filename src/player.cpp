@@ -55,3 +55,6 @@ void Player::_resetTimeSinceLastFire() {
   _lastPlayerInput = 0.0f;
 }
 
+Vector2 Player::getPlayerPosition() {
+  return _worldPosition;
+}
