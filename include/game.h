@@ -19,4 +19,5 @@ public:
   ~Game();
   void update();
   void draw();
+  void _drawTitle();
 };
