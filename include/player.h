@@ -23,6 +23,7 @@ private:
   void _fireLaser();
   void _updateLasers();
   void _drawLasers();
+  void _clearInactiveLasers();
 
 public:
   Player(Vector2 frame);

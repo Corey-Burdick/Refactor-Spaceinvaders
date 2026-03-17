@@ -71,10 +71,21 @@ void Player::_updateLasers() {
   for (auto& l : _lasers) {
     l.update();
   }
+  _clearInactiveLasers();
 }
 
 void Player::_drawLasers() {
   for (auto& l : _lasers) {
     l.draw();
+  }
+}
+
+void Player::_clearInactiveLasers() {
+  for (auto it = _lasers.begin(); it != _lasers.end();) {
+    if (!it -> isActive) {
+      it = _lasers.erase(it);
+    } else {
+      ++it;
+    }
   }
 }

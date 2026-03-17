@@ -5,7 +5,7 @@
 
 class Laser {
 private:
-  const Vector2 _size = Vector2{4, 15};
+  Vector2 _size = Vector2{4, 15};
   Vector2 _worldPosition;
   Vector2 _offset;
   int _speed;
