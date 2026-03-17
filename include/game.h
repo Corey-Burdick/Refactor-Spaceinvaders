@@ -9,6 +9,7 @@
 
 class Game {
 private:
+  Font _gameFont;
   AudioHandler _audio;
   GameWindow _gameFrame;
   Player _player{_gameFrame.getFrameOffset()};

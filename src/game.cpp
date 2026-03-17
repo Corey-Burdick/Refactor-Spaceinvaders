@@ -2,7 +2,7 @@
 
 Game::Game() {
   _audio.addMusic("Audio/Music/PlaceholderTrack1.ogg", "mainTheme");
-
+  _gameFont = LoadFont("Fonts/ProtoNerd.ttf");
 }
 
 Game::~Game() {
@@ -22,10 +22,12 @@ void Game::draw() {
 }
 
 void Game::_drawTitle() {
-  const char* title = "Space Invaders";
+  const char* title = "BEPIS INVADERS";
   int fontSize = 80;
-  float posX = GetScreenWidth() / 2 - MeasureText(title, fontSize) / 2;
-  float posY = _gameFrame.getFrameOffset().y / 2 - fontSize / 2;
-  DrawText(title, posX, posY, fontSize, WHITE);
+  float spacing = fontSize / 15;
+  Vector2 titleSize = MeasureTextEx(_gameFont, title, fontSize, spacing);
+  float posX = GetScreenWidth() / 2 - titleSize.x / 2;
+  float posY = _gameFrame.getFrameOffset().y / 2 - titleSize.y / 2;
+  DrawTextEx(_gameFont, title, {posX, posY}, fontSize, spacing, WHITE);
 }
 
