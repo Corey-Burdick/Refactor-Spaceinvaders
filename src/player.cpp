@@ -16,10 +16,12 @@ void Player::update() {
   _updateTimeSinceLastFire();
   _handlePlayerMovement();
   _handleMovementConstraints();
+  _updateLasers();
 }
 
 void Player::draw() {
   DrawTextureV(_image, _getScreenPosition(), WHITE);
+  _drawLasers();
 }
 
 Vector2 Player::_getScreenPosition() {
@@ -35,6 +37,9 @@ void Player::_handlePlayerMovement() {
   }
   if (IsKeyDown(KEY_D)) {
     _worldPosition.x += 7;
+  }
+  if (IsKeyDown(KEY_SPACE)) {
+    _fireLaser();
   }
 }
 
@@ -55,6 +60,21 @@ void Player::_resetTimeSinceLastFire() {
   _lastPlayerInput = 0.0f;
 }
 
-Vector2 Player::getPlayerPosition() {
-  return _worldPosition;
+void Player::_fireLaser() {
+  if (_lastPlayerInput >= _firerate) {
+    _lasers.push_back(Laser(Vector2{_worldPosition.x + _image.width / 2, _worldPosition.y}, -6, _offset));
+    _resetTimeSinceLastFire();
+  } 
+}
+
+void Player::_updateLasers() {
+  for (auto& l : _lasers) {
+    l.update();
+  }
+}
+
+void Player::_drawLasers() {
+  for (auto& l : _lasers) {
+    l.draw();
+  }
 }

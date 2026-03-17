@@ -2,6 +2,7 @@
 
 #include <raylib.h>
 #include <constants.h>
+#include <laser.h>
 #include <vector>
 #include <iostream>
 
@@ -11,6 +12,7 @@ private:
   Vector2 _offset;
   Vector2 _worldPosition;
   float _lastPlayerInput;
+  std::vector<Laser> _lasers;
   const float _firerate = 0.35f;
 
   Vector2 _getScreenPosition();
@@ -18,12 +20,14 @@ private:
   void _handleMovementConstraints();
   void _updateTimeSinceLastFire();
   void _resetTimeSinceLastFire();
+  void _fireLaser();
+  void _updateLasers();
+  void _drawLasers();
 
 public:
   Player(Vector2 frame);
   ~Player();
   void update();
   void draw();
-  Vector2 getPlayerPosition();
   
 };

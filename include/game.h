@@ -12,9 +12,6 @@ private:
   AudioHandler _audio;
   GameWindow _gameFrame;
   Player _player{_gameFrame.getFrameOffset()};
-  std::vector<Laser> _activelasers;
-
-  void _updateLasers();
 
 public:
 
