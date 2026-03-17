@@ -1,3 +1,4 @@
 build/*
-!build/Audio/*
+!build/Audio/
 !build/Graphics/
+!build/Fonts/
