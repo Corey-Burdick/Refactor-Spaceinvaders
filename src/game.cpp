@@ -40,9 +40,17 @@ void Game::_createEnemies() {
   int yOffset = 110;
   for (int row = 0; row < 5; row++) {
     for (int col = 0; col < 11; col++) {
+      int enemyType;
+      if (row == 0 || row == 1) {
+        enemyType = 1;
+      } else if (row == 2 || row == 3) {
+        enemyType = 2;
+      } else {
+        enemyType = 3;
+      }
       float x = xOffset + col * cellSize;
       float y = yOffset + row * cellSize;
-      tempEnemies.push_back(Enemy{1, {x, y}, _gameFrame.getFrameOffset()});
+      tempEnemies.push_back(Enemy{enemyType, {x, y}, _gameFrame.getFrameOffset()});
     }
   }
   _enemies = tempEnemies;
