@@ -15,7 +15,6 @@ Player::~Player() {
 void Player::update() {
   _updateTimeSinceLastFire();
   _handlePlayerMovement();
-  _handleMovementConstraints();
   _updateLasers();
 }
 
@@ -38,6 +37,7 @@ void Player::_handlePlayerMovement() {
   if (IsKeyDown(KEY_D)) {
     _worldPosition.x += 7;
   }
+  _handleMovementConstraints();
   if (IsKeyDown(KEY_SPACE)) {
     _fireLaser();
   }
@@ -62,7 +62,7 @@ void Player::_resetTimeSinceLastFire() {
 
 void Player::_fireLaser() {
   if (_lastPlayerInput >= _firerate) {
-    _lasers.push_back(Laser(Vector2{_worldPosition.x + _image.width / 2, _worldPosition.y}, -6, _offset));
+    _lasers.push_back(Laser(Vector2{_worldPosition.x + _image.width / 2 - 2, _worldPosition.y}, -6, _offset));
     _resetTimeSinceLastFire();
   } 
 }
