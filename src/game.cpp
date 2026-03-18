@@ -36,10 +36,12 @@ void Game::_drawTitle() {
 void Game::_createEnemies() {
   std::vector<Enemy> tempEnemies;
   int cellSize = 55;
+  int xOffset = 75;
+  int yOffset = 110;
   for (int row = 0; row < 5; row++) {
     for (int col = 0; col < 11; col++) {
-      float x = 75 + col * cellSize;
-      float y = 110 + row * cellSize;
+      float x = xOffset + col * cellSize;
+      float y = yOffset + row * cellSize;
       tempEnemies.push_back(Enemy{1, {x, y}, _gameFrame.getFrameOffset()});
     }
   }
