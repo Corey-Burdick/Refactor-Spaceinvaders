@@ -1,6 +1,7 @@
 #pragma once
 
 #include <raylib.h>
+#include <cstddef>
 
 class Enemy {
 private:
@@ -12,6 +13,8 @@ public:
   static Texture2D enemyImages[3];
 
   Enemy(int _type, Vector2 worldPosition, Vector2 frame);
+  ~Enemy();
+  static void unloadImages();
   void update();
   void draw();
   int getType();
