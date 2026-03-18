@@ -4,19 +4,16 @@
 
 class Enemy {
 private:
-  Vector2 _worldPosition;  
-
-  void _getScreenPosition();
+  int _type;
+  Vector2 _worldPosition;
+  Vector2 _offset;
 
 public:
-  static Texture2D enemyImage[3];
-  int type;
-  Vector2 position;
+  Texture2D image;
 
-  Enemy(int type, Vector2 position);
-  static void UnloadImages();
+  Enemy(int _type, Vector2 worldPosition, Vector2 frame);
   void update();
   void draw();
-  int GetType();
-
+  int getType();
+  Vector2 getScreenPosition();
 };
