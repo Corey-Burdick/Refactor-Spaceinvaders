@@ -9,7 +9,7 @@ private:
   Vector2 _offset;
 
 public:
-  Texture2D image;
+  static Texture2D enemyImages[3];
 
   Enemy(int _type, Vector2 worldPosition, Vector2 frame);
   void update();

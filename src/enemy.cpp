@@ -1,27 +1,32 @@
 #include <enemy.h>
 
-Enemy::Enemy(int type, Vector2 _worldPosition, Vector2 frame) {
+Texture2D Enemy::enemyImages[3] = {};
+
+Enemy::Enemy(int _type, Vector2 _worldPosition, Vector2 frame) {
   this -> _type = _type;
   this -> _worldPosition = _worldPosition;
   _offset = frame;
 
-  switch(type) {
+  if (enemyImages[_type - 1].id == 0) {
+
+  switch(_type) {
     case 1:
-      image = LoadTexture("Graphics/Green_Can.png");
+      enemyImages[0] = LoadTexture("Graphics/Green_Can.png");
       break;
     case 2:
-      image = LoadTexture("Graphics/Red_Can.png");
+      enemyImages[1] = LoadTexture("Graphics/Red_Can.png");
       break;
     case 3:
-      image = LoadTexture("Graphics/Pawn_Can.png");
+      enemyImages[2] = LoadTexture("Graphics/Pawn_Can.png");
       break;
     default:
-      image = LoadTexture("Graphics/Pawn_Can.png");
+      enemyImages[0] = LoadTexture("Graphics/Pawn_Can.png");
+  }
   }
 }
 
 void Enemy::draw() {
-  DrawTextureV(image, getScreenPosition(), WHITE);
+  DrawTextureV(enemyImages[_type - 1], getScreenPosition(), WHITE);
 }
 
 int Enemy::getType() {
