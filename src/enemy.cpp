@@ -7,13 +7,13 @@ Enemy::Enemy(int type, Vector2 _worldPosition, Vector2 frame) {
 
   switch(type) {
     case 1:
-      image = LoadTexture("Graphics/Pawn_Can.png");
+      image = LoadTexture("Graphics/Green_Can.png");
       break;
     case 2:
       image = LoadTexture("Graphics/Red_Can.png");
       break;
     case 3:
-      image = LoadTexture("Graphics/Green_Can.png");
+      image = LoadTexture("Graphics/Pawn_Can.png");
       break;
     default:
       image = LoadTexture("Graphics/Pawn_Can.png");
