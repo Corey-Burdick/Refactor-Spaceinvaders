@@ -6,7 +6,7 @@ int main() {
   
   SetConfigFlags(FLAG_MSAA_4X_HINT);
 
-  InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Space Invaders");
+  InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Bepis Invaders");
   
   SetTargetFPS(TARGET_FPS);
   SetWindowSize(GetMonitorWidth(0), GetMonitorHeight(0));
