@@ -25,10 +25,6 @@ Enemy::Enemy(int _type, Vector2 _worldPosition, Vector2 frame) {
   }
 }
 
-Enemy::~Enemy() {
-  //Enemy::unloadImages();
-}
-
 void Enemy::draw() {
   DrawTextureV(enemyImages[_type - 1], getScreenPosition(), WHITE);
 }

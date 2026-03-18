@@ -8,7 +8,7 @@ Game::Game() {
 }
 
 Game::~Game() {
-
+  Enemy::unloadImages();
 }
 
 void Game::update() {
