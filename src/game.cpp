@@ -38,8 +38,8 @@ void Game::_createEnemies() {
   int cellSize = 55;
   for (int row = 0; row < 5; row++) {
     for (int col = 0; col < 11; col++) {
-      float x = col * cellSize;
-      float y = row * cellSize;
+      float x = 75 + col * cellSize;
+      float y = 110 + row * cellSize;
       tempEnemies.push_back(Enemy{1, {x, y}, _gameFrame.getFrameOffset()});
     }
   }
