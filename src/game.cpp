@@ -65,11 +65,14 @@ void Game::_drawEnemies() {
 
 void Game::_updateEnemies() {
   for (auto& e : _enemies) {
-    e.update();
     if (e.isCollidingWithFrame()) {
       for (auto& i : _enemies) {
         i.reverseDirection();
       }
+      break;
     }
+  }
+  for (auto& e : _enemies) {
+    e.update();
   }
 }
