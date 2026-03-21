@@ -11,6 +11,7 @@ private:
   Vector2 _offset;
   bool _moveLeft = true;
   
+  void _move();
 public:
   static Texture2D enemyImages[3];
 
@@ -18,7 +19,6 @@ public:
   static void unloadImages();
   void update();
   void draw();
-  void move();
   void reverseDirection();
   int getType();
   Vector2 getScreenPosition();

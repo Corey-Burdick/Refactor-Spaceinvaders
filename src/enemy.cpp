@@ -26,7 +26,7 @@ Enemy::Enemy(int _type, Vector2 _worldPosition, Vector2 frame) {
 }
 
 void Enemy::update() {
-  move();
+  _move();
 }
 
 void Enemy::draw() {
@@ -68,7 +68,7 @@ void Enemy::unloadImages() {
   }
 }
 
-void Enemy::move() {
+void Enemy::_move() {
   if (_moveLeft) {
     _worldPosition.x += 1;
   } else {
