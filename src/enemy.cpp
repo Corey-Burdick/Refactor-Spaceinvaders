@@ -25,8 +25,22 @@ Enemy::Enemy(int _type, Vector2 _worldPosition, Vector2 frame) {
   }
 }
 
+void Enemy::update() {
+  move();
+}
+
 void Enemy::draw() {
   DrawTextureV(enemyImages[_type - 1], getScreenPosition(), WHITE);
+}
+
+void Enemy::reverseDirection() {
+  if (_moveLeft) {
+    _moveLeft = false;
+  } else {
+    _moveLeft = true;
+  }
+
+  _worldPosition.y += 5;
 }
 
 int Enemy::getType() {
@@ -40,8 +54,27 @@ Vector2 Enemy::getScreenPosition() {
   return ScreenPosition;
 }
 
+bool Enemy::isCollidingWithFrame() {
+  if (_worldPosition.x + enemyImages[_type - 1].width >= WINDOW_WIDTH ||  _worldPosition.x <= 0) {
+    return true;
+  }
+
+  return false;
+}
+
 void Enemy::unloadImages() {
   for (int i = 0; i < 4; i++) {
     UnloadTexture(enemyImages[i]);
   }
 }
+
+void Enemy::move() {
+  if (_moveLeft) {
+    _worldPosition.x += 1;
+  } else {
+    _worldPosition.x -= 1;
+  }
+}
+
+
+

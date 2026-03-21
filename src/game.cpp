@@ -15,6 +15,7 @@ void Game::update() {
   _audio.update();
   _gameFrame.update();
   _player.update();
+  _updateEnemies();
 }
 
 void Game::draw() {
@@ -62,3 +63,13 @@ void Game::_drawEnemies() {
   }
 }
 
+void Game::_updateEnemies() {
+  for (auto& e : _enemies) {
+    e.update();
+    if (e.isCollidingWithFrame()) {
+      for (auto& i : _enemies) {
+        i.reverseDirection();
+      }
+    }
+  }
+}

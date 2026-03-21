@@ -21,6 +21,7 @@ private:
   void _drawTitle();
   void _createEnemies();
   void _drawEnemies();
+  void _updateEnemies();
 public:
 
   Game();

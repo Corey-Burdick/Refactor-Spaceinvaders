@@ -2,13 +2,15 @@
 
 #include <raylib.h>
 #include <cstddef>
+#include <constants.h>
 
 class Enemy {
 private:
   int _type;
   Vector2 _worldPosition;
   Vector2 _offset;
-
+  bool _moveLeft = true;
+  
 public:
   static Texture2D enemyImages[3];
 
@@ -16,6 +18,9 @@ public:
   static void unloadImages();
   void update();
   void draw();
+  void move();
+  void reverseDirection();
   int getType();
   Vector2 getScreenPosition();
+  bool isCollidingWithFrame();
 };
