@@ -2,3 +2,5 @@ build/*
 !build/Audio/
 !build/Graphics/
 !build/Fonts/
+compile_commands.json
+.cache

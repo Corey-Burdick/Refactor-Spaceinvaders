@@ -22,7 +22,18 @@ set(MY_SOURCES
     src/obstacle.cpp
 )
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+if(CMAKE_EXPORT_COMPILE_COMMANDS)
+  file(CREATE_LINK
+    "${CMAKE_BINARY_DIR}/compile_commands.json"
+    "${CMAKE_SOURCE_DIR}/compile_commands.json"
+    SYMBOLIC
+  )
+endif()
+
 add_executable(${CMAKE_PROJECT_NAME} ${MY_SOURCES})
 
 target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC include)
 target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE raylib)
+
