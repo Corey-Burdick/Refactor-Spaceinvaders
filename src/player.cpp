@@ -3,7 +3,7 @@
 Player::Player(Vector2 frame) {
   _offset = frame; 
   _image = LoadTexture("Graphics/spaceship.png");
-  _worldPosition.x = (WINDOW_WIDTH - _image.width) / 2;
+  _worldPosition.x = float(WINDOW_WIDTH - _image.width) / 2;
   _worldPosition.y = WINDOW_HEIGHT - _image.height;
   _resetTimeSinceLastFire();
 }
@@ -62,7 +62,7 @@ void Player::_resetTimeSinceLastFire() {
 
 void Player::_fireLaser() {
   if (_lastPlayerInput >= _firerate) {
-    _lasers.push_back(Laser(Vector2{_worldPosition.x + _image.width / 2 - 2, _worldPosition.y}, -6, _offset));
+    _lasers.push_back(Laser(Vector2{_worldPosition.x + float(_image.width) / 2 - 2, _worldPosition.y}, -6, _offset));
     _resetTimeSinceLastFire();
   } 
 }

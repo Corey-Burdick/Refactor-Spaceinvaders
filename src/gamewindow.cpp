@@ -20,8 +20,8 @@ void GameWindow::_drawWindowFrame() {
 }
 
 void GameWindow::_updateWindowFrame() {
-  float posX = GetScreenWidth() / 2 - WINDOW_WIDTH / 2;
-  float posY = GetScreenHeight() / 2 - WINDOW_HEIGHT / 2;
+  float posX = float(GetScreenWidth()) / 2 - float(WINDOW_WIDTH) / 2;
+  float posY = float(GetScreenHeight()) / 2 - float(WINDOW_HEIGHT) / 2;
   _gameWindowFrame =  {posX, posY, WINDOW_WIDTH, WINDOW_HEIGHT};  
 }
 

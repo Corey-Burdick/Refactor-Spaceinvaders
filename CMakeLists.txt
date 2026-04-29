@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 4.0)
-project(SpaceInvaders C CXX)
+project(BepisInvaders C CXX)
 
 include(FetchContent)
 

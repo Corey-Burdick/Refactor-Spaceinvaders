@@ -27,9 +27,9 @@ void Game::draw() {
 
 void Game::_drawTitle() {
   const char* title = "BEPIS INVADERS";
-  float spacing = _titleFontSize / 15;
+  float spacing = float(_titleFontSize) / 15;
   Vector2 titleSize = MeasureTextEx(_gameFont, title, _titleFontSize, spacing);
-  float posX = GetScreenWidth() / 2 - titleSize.x / 2;
+  float posX = float(GetScreenWidth()) / 2 - titleSize.x / 2;
   float posY = _gameFrame.getFrameOffset().y / 2 - titleSize.y / 2;
   DrawTextEx(_gameFont, title, {posX, posY}, _titleFontSize, spacing, WHITE);
 }
