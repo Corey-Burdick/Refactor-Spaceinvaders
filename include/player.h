@@ -4,7 +4,6 @@
 #include <constants.h>
 #include <laser.h>
 #include <vector>
-#include <iostream>
 
 class Player {
 private:

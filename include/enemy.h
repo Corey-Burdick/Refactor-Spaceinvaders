@@ -1,7 +1,6 @@
 #pragma once
 
 #include <raylib.h>
-#include <cstddef>
 #include <constants.h>
 
 class Enemy {
